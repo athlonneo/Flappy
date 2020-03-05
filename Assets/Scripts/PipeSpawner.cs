@@ -8,7 +8,7 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] private Pipe pipeUp, pipeDown;
     [SerializeField] private float spawnInterval = 1;
     [SerializeField] public float holeSize = 1f;
-    [SerializeField] private float maxMinOffset = 1;
+    //[SerializeField] private float maxMinOffset = 1;
     [SerializeField] private Point point;
 
     private Coroutine CR_Spawn;
@@ -46,7 +46,8 @@ public class PipeSpawner : MonoBehaviour
         newPipeUp.transform.position += Vector3.up * (holeSize / 2);
         newPipeDown.transform.position += Vector3.down * (holeSize / 2);
 
-        float y = maxMinOffset * Mathf.Sin(Time.time);
+        //float y = maxMinOffset * Mathf.Sin(Time.time);
+        float y = Random.Range(-1.0f, 1.0f);
         newPipeUp.transform.position += Vector3.up * y;
         newPipeDown.transform.position += Vector3.up * y;
 

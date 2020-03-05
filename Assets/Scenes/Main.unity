@@ -1929,7 +1929,7 @@ MonoBehaviour:
   bird: {fileID: 36222043}
   pipeUp: {fileID: 1628082355}
   pipeDown: {fileID: 1123215668}
-  spawnInterval: 1
+  spawnInterval: 3
   holeSize: 1
   maxMinOffset: 1
   point: {fileID: 593536502}
