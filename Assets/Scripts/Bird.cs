@@ -15,6 +15,9 @@ public class Bird : MonoBehaviour
 
     [SerializeField] private Text scoreText;
 
+    [SerializeField] private Projectile projectile;
+    [SerializeField] private UnityEvent OnFire;
+
     private Rigidbody2D rigidBody2d;
     private Animator animator;
 
@@ -31,7 +34,10 @@ public class Bird : MonoBehaviour
             Jump();
         }
 
-
+        if (!isDead && Input.GetMouseButtonDown(1))
+        {
+            Fire();
+        }
     }
     public bool IsDead()
     {
@@ -58,6 +64,17 @@ public class Bird : MonoBehaviour
         if (OnJump != null)
         {
             OnJump.Invoke();
+        }
+    }
+
+    void Fire()
+    {
+        Projectile newProjectile = Instantiate(projectile, transform.position, transform.rotation);
+        newProjectile.gameObject.SetActive(true);
+
+        if (OnFire != null)
+        {
+            OnFire.Invoke();
         }
     }
 

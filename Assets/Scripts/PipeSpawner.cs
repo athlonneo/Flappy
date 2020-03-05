@@ -53,8 +53,8 @@ public class PipeSpawner : MonoBehaviour
 
         Point newPoint = Instantiate(point, transform.position, Quaternion.identity);
         newPoint.gameObject.SetActive(true);
-        newPoint.SetSize(holeSize);
-        newPoint.transform.position += Vector3.up * y;
+        //newPoint.SetSize(holeSize);
+        //newPoint.transform.position += Vector3.up * y;
     }
 
     IEnumerator IeSpawn()
